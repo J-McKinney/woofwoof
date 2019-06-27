@@ -43,26 +43,31 @@ $("document").ready(function () {
             console.log(oneH);
             $("#h100").on("click", function () {
                 $("#h100").prop("disabled", true);
+                enableAnswers();
                 $(".lead").html(oneH[0]);
                 $("#ans1").html(oneH[1]).on("click", function () {
                     userScore += 100;
                     $("#score").html(userScore);
+                    disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
                 });
                 $("#ans2").html(oneH[2]).on("click", function () {
-                    userScore -= 100;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 100;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans3").html(oneH[3]).on("click", function () {
-                    userScore -= 100;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 100;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans4").html(oneH[4]).on("click", function () {
-                    userScore -= 100;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 100;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
             })
         //                                                                            3rd answer right
@@ -70,26 +75,31 @@ $("document").ready(function () {
             console.log(twoH);
             $("#h200").on("click", function () {
                 $("#h200").prop("disabled", true);
+                enableAnswers();
                 $(".lead").html(twoH[0]);
                 $("#ans1").html(twoH[1]).on("click", function () {
-                    userScore -= 200;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 200;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans2").html(twoH[2]).on("click", function () {
-                    userScore -= 200;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 200;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans3").html(twoH[3]).on("click", function () {
                     score += 200;
                     $("#score").html(score);
+                    disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
                 });
                 $("#ans4").html(twoH[4]).on("click", function () {
-                    userScore -= 200;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 200;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
             })
         //                                                                           2nd answer right
@@ -97,26 +107,31 @@ $("document").ready(function () {
             console.log(threeH);
             $("#h300").on("click", function () {
                 $("#h300").prop("disabled", true);
+                enableAnswers();
                 $(".lead").html(threeH[0]);
                 $("#ans1").html(threeH[1]).on("click", function () {
-                    userScore -= 300;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 300;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans2").html(threeH[2]).on("click", function () {
-                    userScore += 300;
-                    $("#score").html(userScore);
-                    alert("Correct Answer, Please Pick Another Category");
+                    // userScore += 300;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Correct Answer, Please Pick Another Category");
                 });
                 $("#ans3").html(threeH[3]).on("click", function () {
-                    userScore -= 300;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 300;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans4").html(threeH[4]).on("click", function () {
-                    userScore -= 300;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 300;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
             })
         //                                                                      1st answer right
@@ -124,26 +139,31 @@ $("document").ready(function () {
             console.log(fourH);
             $("#h400").on("click", function () {
                 $("#h400").prop("disabled", true);
+                enableAnswers();
                 $(".lead").html(fourH[0]);
-                $("#ans1").html(fourH[1]).on("click", function () {
+                $("#ans1").html(fourH[1]).on("mousedown", function () {
                     userScore += 400;
                     $("#score").html(userScore);
+                    disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
                 });
-                $("#ans2").html(fourH[2]).on("click", function () {
-                    userScore -= 400;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                $("#ans2").html(fourH[2]).on("mousedown", function () {
+                    // userScore -= 400;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
-                $("#ans3").html(fourH[3]).on("click", function () {
-                    userScore -= 400;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                $("#ans3").html(fourH[3]).on("mousedown", function () {
+                    // userScore -= 400;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
-                $("#ans4").html(fourH[4]).on("click", function () {
-                    userScore -= 400;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                $("#ans4").html(fourH[4]).on("mousedown", function () {
+                    // userScore -= 400;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
             })
         //                                                                       4th answer right
@@ -151,30 +171,47 @@ $("document").ready(function () {
             console.log(fiveH);
             $("#h500").on("click", function () {
                 $("#h500").prop("disabled", true);
+                enableAnswers();
                 $(".lead").html(fiveH[0]);
                 $("#ans1").html(fiveH[1]).on("click", function () {
-                    userScore -= 500;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 500;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans2").html(fiveH[2]).on("click", function () {
-                    userScore -= 500;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 500;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans3").html(fiveH[3]).on("click", function () {
-                    userScore -= 500;
-                    $("#score").html(userScore);
-                    alert("Unless you know the answer, I would try another category...")
+                    // userScore -= 500;
+                    // $("#score").html(userScore);
+                    disableAnswers();
+                    // alert("Unless you know the answer, I would try another category...")
                 });
                 $("#ans4").html(fiveH[4]).on("click", function () {
                     userScore += 500;
                     $("#score").html(userScore);
+                    disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
                 })
             })
 
+            function disableAnswers(){
+                $("#ans1").prop("disabled", true);
+                $("#ans2").prop("disabled", true);
+                $("#ans3").prop("disabled", true);
+                $("#ans4").prop("disabled", true);
+            }
 
+            function enableAnswers(){
+                $("#ans1").prop("disabled", false);
+                $("#ans2").prop("disabled", false);
+                $("#ans3").prop("disabled", false);
+                $("#ans4").prop("disabled", false);
+            }
 
 
 
