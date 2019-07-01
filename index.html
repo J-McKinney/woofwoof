@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>-Trivialized Trivia-</title>
+    <title>-Trivia-</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link type="text/javascript" src="magic.js">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -20,165 +22,140 @@
 
     </header>
 
-    <div class="container-fluid">
-        <h2 id="scrBrd">Your Score: <div id="score"></div>
-        </h2>
-    </div>
+    <body>
 
-    <div class="container-fluid">
-        <h1>Categories:</h1>
-    </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">You have 24 Seconds to answer these 6 questions</h1>
+                <p class="lead"><h2 id="scrBrd">Your Score: <div id="score">0</div><div>/6</div>
+                </h2></p>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <h2>|History|</h2>
-            </div>
-            <div class="col-md-2">
-                <h2>|Eng.&.Lit|</h2>
-            </div>
-            <div class="col-md-2">
-                <h2>|Geography|</h2>
-            </div>
-            <div class="col-md-2">
-                <h2>|Science|</h2>
-            </div>
-            <div class="col-md-2">
-                <h2>|Math|</h2>
-            </div>
-            <div class="col-md-2">
-                <h2>|TV|</h2>
-            </div>
-        </div>
-    </div>
-    <!-- categories  -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" id="question1">Question:</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans11"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans12"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans13"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans14"></button>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="h100">$100</button></div>
-            <!-- History -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="e100">$100</button></div>
-            <!-- Eng.&.Lit -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="g100">$100</button></div>
-            <!-- Geography -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="s100">$100</button></div>
-            <!-- Science -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="m100">$100</button></div>
-            <!-- Math -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="p100">$250</button></div>
-            <!-- TV Potpourri -->
-        </div>
-    </div>
-    <!-- first grade questions -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" id="question2">Question:</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans21"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans22"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans23"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans24"></button>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="h200">$200</button></div>
-            <!-- History -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="e200">$200</button></div>
-            <!-- Eng.&.Lit -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="g200">$200</button></div>
-            <!-- Geography -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="s200">$200</button></div>
-            <!-- Science -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="m200">$200</button></div>
-            <!-- Math -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="p200">$500</button></div>
-            <!-- TV Potpourri -->
-        </div>
-    </div>
-    <!-- secong grade questions -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" id="question3">Question:</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans31"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans32"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans33"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans34"></button>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="h300">$300</button></div>
-            <!-- History -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="e300">$300</button></div>
-            <!-- Eng.&.Lit -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="g300">$300</button></div>
-            <!-- Geography -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="s300">$300</button></div>
-            <!-- Science -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="m300">$300</button></div>
-            <!-- Math -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="p300">$750</button></div>
-            <!-- TV Potpourri -->
-        </div>
-    </div>
-    <!-- third grade questions -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" id="question4">Question:</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans41"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans42"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans43"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans44"></button>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="h400">$400</button></div>
-            <!-- History -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="e400">$400</button></div>
-            <!-- Eng.&.Lit -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="g400">$400</button></div>
-            <!-- Geography -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="s400">$400</button></div>
-            <!-- Science -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="m400">$400</button></div>
-            <!-- Math -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="p400">$1000</button></div>
-            <!-- TV Potpourri -->
-        </div>
-    </div>
-    <!-- fourth grade questions -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" id="question5">Question:</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans51"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans52"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans53"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans54"></button>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="h500">$500</button></div>
-            <!-- History -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="e500">$500</button></div>
-            <!-- Eng.&.Lit -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="g500">$500</button></div>
-            <!-- Geography -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="s500">$500</button></div>
-            <!-- Science -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="m500">$500</button></div>
-            <!-- Math -->
-            <div class="col-md-2"><button type="button" class="btn btn-primary" id="p500">$1250</button></div>
-            <!-- TV Potpourri -->
-        </div>
-    </div>
-    <!-- fifth grade question -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" id="question6">Question:</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans61"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans62"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans63"></button>
+                        </div>
+                        <div class="col-md-3"><button type="button" class="btn btn-primary btn-block"
+                                id="ans64"></button>
+                        </div>
+                    </div>
+                </div>
 
-
-
-
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Question:</h1>
-            <p class="lead">Please pick one answer:</p>
-            <div class="row">
-                <div class="col-md-6">
-                    <button id="ans1" type="button" class="btn btn-primary btn-lg btn-block">Answer One</button></div>
-                <div class="col-md-6">
-                    <button id="ans2" type="button" class="btn btn-primary btn-lg btn-block">Answer Two</button></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <button id="ans3" type="button" class="btn btn-primary btn-lg btn-block">Answer Three</button></div>
-                <div class="col-md-6">
-                    <button id="ans4" type="button" class="btn btn-primary btn-lg btn-block">Answer Four</button></div>
             </div>
         </div>
-    </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    </body>
     <script src="magic.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -192,91 +169,17 @@
 </body>
 
 <footer>
-
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
 </footer>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

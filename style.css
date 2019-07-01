@@ -1,27 +1,40 @@
-.col-md-2 {
-    text-align: center
+.jumbotron {
+    text-align: center;
 }
 
-/* #blank {
-    color: white;
-} */
+#qs,
+#question1,
+#question2,
+#question3,
+#question4,
+#question5,
+#question6 {
+    text-align: center;
+    font-size: 44px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.col-md-3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#ans61, 
+#ans62,
+#ans63,
+#ans64 {
+    margin-bottom: 100px;
+}
 
 .btn {
-    width: 120px;
-    height: 80px;
-    margin-bottom: 20px;
+    /* color: #ff0000;
+    color: #008000; */
+    /* height: 40px;
+    width: 60px; */
 }
 
-h1 {
-    text-align: center;
-}
 
-#scrBrd {
-    text-align: center;
-}
-.lead {
-    text-align: center;
-}
 
 /* ///////////////////////////////////RWD////////////////////////////////////// */
 
