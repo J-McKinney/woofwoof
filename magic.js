@@ -1,11 +1,8 @@
 $("document").ready(function () {
     var score = 0;
     var userScore = 0;
-    var hist;
-    var eng;
-    var sci;
-    var math;
-    var hard;
+    var number = 24;
+    var intervalId;
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var history = [
         ["The what was the name of the last Queen of France?", "Anne of Brittany", "Adela of Champagne", "Empress Jose`phine", "Queen Marie Antoinette"],
@@ -330,6 +327,77 @@ $("document").ready(function () {
         $("#ans64").prop("disabled", true);
     });
 
+    function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    }
+    function decrement() {
+        number--;
+        $("#time").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll();
+            stopAll();
+            alert("Time's Up! Press the restart button at the top to try again!");
+        }
+    }
+    function stop() {
+        clearInterval(intervalId);
+    }
+    run();
+
+    function showAll() {
+        $("#ans11").css("background-color", "red");
+        $("#ans12").css("background-color", "red");
+        $("#ans13").css("background-color", "red");
+        $("#ans14").css("background-color", "green");
+        $("#ans21").css("background-color", "red");
+        $("#ans23").css("background-color", "red");
+        $("#ans24").css("background-color", "red");
+        $("#ans22").css("background-color", "green");
+        $("#ans31").css("background-color", "red");
+        $("#ans32").css("background-color", "red");
+        $("#ans34").css("background-color", "red");
+        $("#ans33").css("background-color", "green");
+        $("#ans41").css("background-color", "red");
+        $("#ans42").css("background-color", "red");
+        $("#ans44").css("background-color", "red");
+        $("#ans43").css("background-color", "green");
+        $("#ans52").css("background-color", "red");
+        $("#ans53").css("background-color", "red");
+        $("#ans54").css("background-color", "red");
+        $("#ans51").css("background-color", "green");
+        $("#ans61").css("background-color", "red");
+        $("#ans62").css("background-color", "red");
+        $("#ans64").css("background-color", "red");
+        $("#ans63").css("background-color", "green");
+    }
+    function stopAll() {
+        $("#ans11").prop("disabled", true);
+        $("#ans12").prop("disabled", true);
+        $("#ans13").prop("disabled", true);
+        $("#ans14").prop("disabled", true);
+        $("#ans21").prop("disabled", true);
+        $("#ans22").prop("disabled", true);
+        $("#ans23").prop("disabled", true);
+        $("#ans24").prop("disabled", true);
+        $("#ans31").prop("disabled", true);
+        $("#ans32").prop("disabled", true);
+        $("#ans33").prop("disabled", true);
+        $("#ans34").prop("disabled", true);
+        $("#ans41").prop("disabled", true);
+        $("#ans42").prop("disabled", true);
+        $("#ans43").prop("disabled", true);
+        $("#ans44").prop("disabled", true);
+        $("#ans51").prop("disabled", true);
+        $("#ans52").prop("disabled", true);
+        $("#ans53").prop("disabled", true);
+        $("#ans54").prop("disabled", true);
+        $("#ans61").prop("disabled", true);
+        $("#ans62").prop("disabled", true);
+        $("#ans63").prop("disabled", true);
+        $("#ans64").prop("disabled", true);
+    }
 
     // document.body.onkeyup = function (e) {
     //     if (e.keyCode == 32) {
