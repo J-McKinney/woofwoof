@@ -4,160 +4,37 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>-Trivia-</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link type="text/javascript" src="magic.js">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script type="text/javascript" src="magic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </head>
 
 <body>
 
 
-    <header>
-
-    </header>
-
-
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <a href="start.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">-Press Here To
-                Restart Trivia-</a>
-            <h1 class="display-4">You have 24 Seconds to answer these 6 questions</h1>
-            <p class="lead">
-                <h2 id="scrBrd">Your Score: <div id="score">0</div>
-                    <div>/6</div>
-                </h2>
-            </p>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="question1">Question:</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans11"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans12"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans13"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans14"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="question2">Question:</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans21"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans22"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans23"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans24"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="question3">Question:</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans31"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans32"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans33"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans34"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="question4">Question:</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans41"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans42"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans43"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans44"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="question5">Question:</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans51"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans52"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans53"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans54"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="question6">Question:</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans61"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans62"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans63"></button>
-                    </div>
-                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-block" id="ans64"></button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
 
 
 
     <script src="magic.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity=""
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity=""
         crossorigin="anonymous"></script>
 </body>
 
 <footer>
-    <div class="navbar">
-        <div class="container">
-            <div class="row">
-                <div id="timer"><h3>Timer :</h3></div>
-                <div id="time"> 00:00 </div>
-            </div>
-        </div>
-    </div>
+
 </footer>
 
 </html>
