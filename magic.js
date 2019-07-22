@@ -32,7 +32,7 @@ $.ajax({
       position: new google.maps.LatLng(response[i].LATITUDE, response[i].LONGITUDE),
       map: map
     });
-    // console.log("Bus Number: " + response[i].VEHICLE + " and Route Number: " + response[i].ROUTE + " is " + response[i].ADHERENCE + " Minutes on Schedule.");
+    console.log("Bus Number: " + response[i].VEHICLE + " and Route Number: " + response[i].ROUTE + " is " + response[i].ADHERENCE + " Minutes on Schedule.");
     var adherence = response[i].ADHERENCE;
     var vehicle = response[i].VEHICLE;
     var route = response[i].ROUTE;
