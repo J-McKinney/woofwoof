@@ -21,7 +21,7 @@ $(document).ready(function () {
 var map, infoWindow;
 var latLng;
 
-var queryURL = "http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus";
+var queryURL = "https://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus";
 
 $.ajax({
   url: queryURL,
