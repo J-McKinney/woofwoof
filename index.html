@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SMarta</title>
+    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -17,16 +16,15 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </head>
-
 <body>
-
     <div class="jumbotron">
         <h1 class="display-4">SMarta</h1>
-        <p class="lead">Welcome To SMarta: A Better Way Around Town!</p>
+        <p class="lead">Welcome To SMarta: A Better Way Around Town!!! </p>
         <hr class="my-4">
         <h5>Today is <span id="currentStatus"></span></h5>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <a id="LocateMe" class="btn btn-primary btn-lg" href="#" role="button">Locate Me</a>
     </div>
+
 
     <div class="container">
         <div class="row">
@@ -35,16 +33,15 @@
             </div>
         </div>
     </div>
-
     <br>
     <div class="container">
         <div class="row">
             <div class="col-sm-8" id="section1A">
-                Bus Arrivals:
+                Bus Routes:
                 <hr>
             </div>
             <div class="col-sm-4" id="section2A">
-                Section 2
+                Closest Bus Stop:
             </div>
         </div>
     </div>
@@ -60,9 +57,9 @@
     </div>
 
     <script src="magic.js" async defer></script>
+
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm3K0IyMEjA7gthtcjJbonWOK3TU8Ajj8&libraries=geometry,&callback=initMap">
         </script>
 </body>
-
 </html>
