@@ -13,9 +13,6 @@ var Article = require("./models/Article.js");
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-// Require all models
-var db = require("./models");
-
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -49,7 +46,6 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-//// mongoose.connect("mongodb://heroku_hjd2jb8f:6jiuccbv0oth9j8t7odenmj3kd@ds123331.mlab.com:23331/heroku_hjd2jb8f");
 mongoose.connect("mongodb://localhost/NewsScraperHW", {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -66,7 +62,6 @@ mongoose.connection.once("open", function() {
 });
 
 // Routes
-
 //GET requests to render Handlebars pages
 app.get("/", function(req, res) {
   Article.find({ saved: false }, function(error, data) {
@@ -124,58 +119,49 @@ app.get("/scrape", function(req, res) {
           .find("a")
           .attr("href");
 
-      // Using our Article model, create a new entry
-      // This effectively passes the result object to the entry (and the title and link)
-      var entry = new Article(result);
-
-      // Now, save that entry to the db
-      entry.save(function(err, doc) {
-        // Log any errors
-        if (err) {
+      // Create a new Article using the `result` object built from scraping
+      Article.create(result)
+        .then(function(dbArticle) {
+          // View the added result in the console
+          console.log(dbArticle);
+        })
+        .catch(function(err) {
+          // If an error occurred, log it
           console.log(err);
-        }
-        // Or log the doc
-        else {
-          console.log(doc);
-        }
-      });
+        });
     });
     // Send a message to the client
     res.send("Scrape Complete");
   });
 });
 
-// This will get the articles we scraped from the mongoDB
+// Route for getting all Articles from the db
 app.get("/articles", function(req, res) {
-  // Grab every doc in the Articles array
-  Article.find({}, function(error, doc) {
-    // Log any errors
-    if (error) {
-      console.log(error);
-    }
-    // Or send the doc to the browser as a json object
-    else {
-      res.json(doc);
-    }
-  });
+  // Grab every document in the Articles collection
+  Article.find({})
+    .then(function(dbArticle) {
+      // If we were able to successfully find Articles, send them back to the client
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
 });
 
-// Grab an article by it's ObjectId
-app.get("/articles/:id", function(req, res) {
+// Route for grabbing a specific Article by id, populate it with it's note
+app.get("/articles/:id", function (req, res) {
   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
   Article.findOne({ _id: req.params.id })
     // ..and populate all of the notes associated with it
     .populate("note")
-    // now, execute our query
-    .exec(function(error, doc) {
-      // Log any errors
-      if (error) {
-        console.log(error);
-      }
-      // Otherwise, send the doc to the browser as a json object
-      else {
-        res.json(doc);
-      }
+    .then(function (dbArticle) {
+      // If we were able to successfully find an Article with the given id, send it back to the client
+      res.json(dbArticle);
+    })
+    .catch(function (err) {
+      // If an error occurred, send it to the client
+      res.json(err);
     });
 });
 
